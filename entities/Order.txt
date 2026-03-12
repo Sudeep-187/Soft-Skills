@@ -1,0 +1,90 @@
+{
+  "name": "Order",
+  "type": "object",
+  "properties": {
+    "order_number": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "type": "string"
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "image": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "total_amount": {
+      "type": "number"
+    },
+    "shipping_address": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "address_line": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "pincode": {
+          "type": "string"
+        }
+      }
+    },
+    "payment_method": {
+      "type": "string",
+      "enum": [
+        "upi",
+        "card",
+        "cod",
+        "netbanking"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "placed",
+        "confirmed",
+        "shipped",
+        "delivered",
+        "cancelled",
+        "returned"
+      ],
+      "default": "placed"
+    },
+    "tracking_id": {
+      "type": "string"
+    },
+    "delivery_date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "order_number",
+    "total_amount"
+  ]
+}

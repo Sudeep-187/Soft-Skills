@@ -1,0 +1,620 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   DESIGN TOKENS — South India Artisan Marketplace
+   ============================================================ */
+@layer base {
+  :root {
+    /* Shadcn/Radix UI tokens */
+    --background: 40 43% 95%;
+    --foreground: 20 50% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 50% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 50% 10%;
+    --primary: 15 60% 30%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 38 30% 88%;
+    --secondary-foreground: 20 50% 10%;
+    --muted: 38 30% 92%;
+    --muted-foreground: 20 25% 45%;
+    --accent: 42 90% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 35 30% 82%;
+    --input: 35 30% 82%;
+    --ring: 15 60% 30%;
+    --radius: 0.75rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Custom Brand Palette */
+    --cream: #F9F3E8;
+    --cream-dark: #EDE5D4;
+    --warm-white: #FFFDF7;
+    --tamarind: #6B3E26;
+    --tamarind-light: #8B5A3A;
+    --tamarind-dark: #4A2A18;
+    --turmeric: #D4A017;
+    --turmeric-light: #E8BB3A;
+    --turmeric-dark: #A87C0E;
+    --chili: #C0392B;
+    --chili-dark: #922B21;
+    --banana-leaf: #2E7D32;
+    --banana-leaf-light: #43A047;
+    --banana-leaf-dark: #1B5E20;
+
+    /* Aliases */
+    --terracotta: #C0392B;
+    --terracotta-light: #D65348;
+    --terracotta-dark: #922B21;
+    --mustard: #D4A017;
+    --mustard-light: #E8BB3A;
+    --mustard-dark: #A87C0E;
+    --forest: #2E7D32;
+    --forest-light: #43A047;
+    --forest-dark: #1B5E20;
+    --maroon: #6B3E26;
+    --maroon-light: #8B5A3A;
+    --maroon-dark: #4A2A18;
+
+    /* Text */
+    --text-primary: #1E0E06;
+    --text-secondary: #5C3317;
+    --text-muted: #8A6548;
+    --border-warm: #D4C4A8;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 4px rgba(107, 62, 38, 0.08);
+    --shadow-card: 0 4px 16px rgba(107, 62, 38, 0.10);
+    --shadow-hover: 0 12px 40px rgba(107, 62, 38, 0.18);
+    --shadow-glow: 0 0 30px rgba(212, 160, 23, 0.25);
+    --radius-card: 18px;
+  }
+
+  .dark {
+    --background: 20 30% 7%;
+    --foreground: 38 30% 90%;
+    --cream: #16100A;
+    --cream-dark: #201510;
+    --warm-white: #0F0B07;
+    --text-primary: #F2E8D8;
+    --text-secondary: #C4A882;
+    --text-muted: #8A7260;
+    --border-warm: #3D2E1E;
+    --border: 20 20% 20%;
+    --card: 20 30% 10%;
+    --card-foreground: 38 30% 90%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--cream);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Focus ring */
+  :focus-visible {
+    outline: 2px solid var(--turmeric);
+    outline-offset: 2px;
+  }
+}
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+.font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-sans {
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+.font-hand {
+  font-family: 'Caveat', cursive;
+}
+
+/* ============================================================
+   GRADIENTS
+   ============================================================ */
+.gradient-hero {
+  background: linear-gradient(135deg, rgba(74, 42, 24, 0.92) 0%, rgba(30, 14, 6, 0.75) 100%);
+}
+
+.gradient-warm {
+  background: linear-gradient(135deg, var(--chili) 0%, var(--tamarind) 100%);
+}
+
+.gradient-gold {
+  background: linear-gradient(135deg, var(--turmeric) 0%, var(--tamarind-light) 100%);
+}
+
+.gradient-forest {
+  background: linear-gradient(135deg, var(--banana-leaf) 0%, var(--banana-leaf-dark) 100%);
+}
+
+.gradient-festival {
+  background: linear-gradient(135deg, #C0392B 0%, #D4A017 60%, #6B3E26 100%);
+}
+
+.gradient-luxury {
+  background: linear-gradient(135deg, #D4C4A8 0%, #B8A880 100%);
+}
+
+.gradient-card {
+  background: linear-gradient(180deg, transparent 50%, rgba(30, 14, 6, 0.85) 100%);
+}
+
+.gradient-silk {
+  background: linear-gradient(135deg, #D4A017 0%, #C0392B 50%, #6B3E26 100%);
+}
+
+/* ============================================================
+   CARD SYSTEM
+   ============================================================ */
+.card-base {
+  background: white;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border-warm);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.card-base:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+}
+
+/* ============================================================
+   BUTTON SYSTEM
+   ============================================================ */
+.btn-primary {
+  background: var(--tamarind);
+  color: white;
+  border-radius: 999px;
+  padding: 0.625rem 1.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  letter-spacing: 0.01em;
+}
+
+.btn-primary:hover {
+  background: var(--tamarind-light);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-card);
+}
+
+.btn-cta {
+  background: linear-gradient(135deg, var(--chili), var(--tamarind));
+  color: white;
+  border-radius: 999px;
+  padding: 0.75rem 2rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+  letter-spacing: 0.01em;
+}
+
+.btn-cta:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(192, 57, 43, 0.35);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--tamarind);
+  border: 1.5px solid var(--tamarind);
+  border-radius: 999px;
+  padding: 0.625rem 1.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-outline:hover {
+  background: var(--tamarind);
+  color: white;
+}
+
+/* ============================================================
+   BADGE SYSTEM
+   ============================================================ */
+.badge-discount {
+  background: var(--chili);
+  color: white;
+}
+
+.badge-new {
+  background: var(--banana-leaf);
+  color: white;
+}
+
+.badge-festival {
+  background: var(--turmeric);
+  color: var(--tamarind-dark);
+}
+
+.badge-trending {
+  background: linear-gradient(135deg, var(--chili), var(--turmeric));
+  color: white;
+}
+
+/* ============================================================
+   SECTION STYLES
+   ============================================================ */
+.section-heading {
+  @apply font-serif text-3xl md:text-4xl font-bold;
+  color: var(--text-primary);
+}
+
+.section-sub {
+  @apply text-xs font-semibold uppercase tracking-widest;
+  color: var(--terracotta);
+}
+
+.section-desc {
+  @apply text-sm leading-relaxed;
+  color: var(--text-muted);
+}
+
+/* ============================================================
+   INPUTS
+   ============================================================ */
+.input-warm {
+  border: 1.5px solid var(--border-warm);
+  background-color: var(--warm-white);
+  color: var(--text-primary);
+  border-radius: 999px;
+  padding: 0.6rem 1rem;
+  font-size: 0.875rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-warm:focus {
+  outline: none;
+  border-color: var(--turmeric);
+  box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.15);
+}
+
+.input-warm::placeholder {
+  color: var(--text-muted);
+}
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--tamarind-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--tamarind);
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes floatY {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(212, 160, 23, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 20px 6px rgba(212, 160, 23, 0.3);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0
+  }
+
+  to {
+    height: var(--radix-accordion-content-height)
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height)
+  }
+
+  to {
+    height: 0
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-float {
+  animation: floatY 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-accordion-down {
+  animation: accordion-down 0.2s ease-out;
+}
+
+.animate-accordion-up {
+  animation: accordion-up 0.2s ease-out;
+}
+
+/* ============================================================
+   SKELETON LOADER
+   ============================================================ */
+.skeleton {
+  background: linear-gradient(90deg, #E8DDD0 25%, #F5EEE4 50%, #E8DDD0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+/* ============================================================
+   PRODUCT IMAGE OVERLAY
+   ============================================================ */
+.img-overlay {
+  background: linear-gradient(to top, rgba(30, 14, 6, 0.7) 0%, transparent 60%);
+}
+
+/* ============================================================
+   HERO PATTERN (subtle mandala bg)
+   ============================================================ */
+.hero-pattern {
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(212, 160, 23, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(192, 57, 43, 0.08) 0%, transparent 50%);
+}
+
+/* ============================================================
+   STATE PILL COLORS
+   ============================================================ */
+.pill-ap {
+  background: #FEF3C7;
+  color: #92400E;
+  border: 1px solid #FDE68A;
+}
+
+.pill-ts {
+  background: #FEE2E2;
+  color: #991B1B;
+  border: 1px solid #FCA5A5;
+}
+
+.pill-tn {
+  background: #DCFCE7;
+  color: #166534;
+  border: 1px solid #86EFAC;
+}
+
+.pill-kl {
+  background: #DBEAFE;
+  color: #1E40AF;
+  border: 1px solid #93C5FD;
+}
+
+/* ============================================================
+   ANNOUNCEMENTS / BANNER BAR
+   ============================================================ */
+.top-bar {
+  background: linear-gradient(90deg, var(--tamarind-dark) 0%, #3D1A08 50%, var(--tamarind-dark) 100%);
+}
+
+/* ============================================================
+   MARQUEE WRAPPER
+   ============================================================ */
+.marquee-wrapper {
+  overflow: hidden;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+}
+
+/* ============================================================
+   ADVANCED 3D PRODUCT CARDS (Puma-style CSS Transforms)
+   ============================================================ */
+.product-card {
+  position: relative;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: white;
+  border: 1px solid var(--border-warm);
+  transform-style: preserve-3d;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 4px 20px rgba(107, 62, 38, 0.06);
+}
+
+/* 3D tilt and lift on hover - entirely CSS/GPU driven */
+.product-card:hover {
+  transform: translateY(-8px) rotateX(2deg) rotateY(-2deg);
+  box-shadow:
+    20px 20px 40px rgba(107, 62, 38, 0.12),
+    -10px -10px 30px rgba(255, 255, 255, 0.8),
+    0 0 0 1px rgba(212, 160, 23, 0.3);
+  z-index: 10;
+}
+
+.product-card-img-wrap {
+  position: relative;
+  overflow: hidden;
+  background: var(--cream-dark);
+  aspect-ratio: 1/1;
+  perspective: 1000px;
+}
+
+.product-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-origin: center;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+/* Image zooms and pops out in Z-space */
+.product-card:hover .product-card-img {
+  transform: scale(1.1) translateZ(20px);
+}
+
+.product-card-actions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 20;
+  transform: translateX(20px) translateZ(30px);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.product-card:hover .product-card-actions {
+  transform: translateX(0) translateZ(30px);
+  opacity: 1;
+}
+
+.action-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.action-btn:hover {
+  transform: scale(1.15);
+}
+
+.action-btn:active {
+  transform: scale(0.95);
+}
+
+/* ============================================================
+   SCROLLBAR HIDE (horizontal product carousels)
+   ============================================================ */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ============================================================
+   GPU PERFORMANCE — promote parallax images to compositor
+   ============================================================ */
+img[loading="lazy"] {
+  content-visibility: auto;
+}

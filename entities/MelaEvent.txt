@@ -1,0 +1,72 @@
+{
+  "name": "MelaEvent",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "location": {
+      "type": "string"
+    },
+    "banner_image": {
+      "type": "string"
+    },
+    "schedule": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "time": {
+            "type": "string"
+          },
+          "event_name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "featured_artisans": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "is_live": {
+      "type": "boolean",
+      "default": false
+    },
+    "stream_url": {
+      "type": "string"
+    },
+    "stall_count": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "upcoming",
+        "live",
+        "completed"
+      ],
+      "default": "upcoming"
+    }
+  },
+  "required": [
+    "name",
+    "start_date"
+  ]
+}

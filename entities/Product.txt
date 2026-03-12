@@ -1,0 +1,192 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Product name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed product description"
+    },
+    "short_description": {
+      "type": "string",
+      "description": "Brief product summary"
+    },
+    "price": {
+      "type": "number",
+      "description": "Price in INR"
+    },
+    "original_price": {
+      "type": "number",
+      "description": "MRP before discount"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "handloom",
+        "pottery",
+        "jewelry",
+        "paintings",
+        "woodcraft",
+        "metalwork",
+        "spices",
+        "organic_food",
+        "leather",
+        "bamboo",
+        "stone_carving",
+        "other"
+      ]
+    },
+    "material": {
+      "type": "string"
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Product image URLs"
+    },
+    "artisan_name": {
+      "type": "string"
+    },
+    "artisan_id": {
+      "type": "string"
+    },
+    "village": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "Andhra Pradesh",
+        "Telangana"
+      ]
+    },
+    "district": {
+      "type": "string"
+    },
+    "origin_story": {
+      "type": "string"
+    },
+    "stock": {
+      "type": "number",
+      "default": 10
+    },
+    "rating": {
+      "type": "number",
+      "default": 4.5
+    },
+    "review_count": {
+      "type": "number",
+      "default": 0
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_festival_special": {
+      "type": "boolean",
+      "default": false
+    },
+    "weight_grams": {
+      "type": "number"
+    },
+    "dimensions": {
+      "type": "string"
+    },
+    "care_instructions": {
+      "type": "string"
+    },
+    "delivery_days_min": {
+      "type": "number",
+      "description": "Minimum delivery days",
+      "default": 3
+    },
+    "delivery_days_max": {
+      "type": "number",
+      "description": "Maximum delivery days",
+      "default": 7
+    },
+    "is_perishable": {
+      "type": "boolean",
+      "default": false,
+      "description": "Is this a perishable food item?"
+    },
+    "shelf_life_days": {
+      "type": "number",
+      "description": "Shelf life in days after delivery"
+    },
+    "serving_size": {
+      "type": "string",
+      "description": "e.g. Per plate, Per 500g pack"
+    },
+    "calories_per_serving": {
+      "type": "number",
+      "description": "Calories per serving"
+    },
+    "spice_level": {
+      "type": "number",
+      "description": "Spice level 1-5",
+      "default": 2
+    },
+    "is_veg": {
+      "type": "boolean",
+      "default": true
+    },
+    "meal_type": {
+      "type": "string",
+      "enum": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "snack",
+        "dessert",
+        "beverage",
+        "combo"
+      ],
+      "description": "Type of meal"
+    },
+    "customizations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "extra_cost": {
+            "type": "number"
+          }
+        }
+      },
+      "description": "Optional add-ons or customizations"
+    },
+    "combo_includes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Items included in a combo meal"
+    }
+  },
+  "required": [
+    "name",
+    "price",
+    "category"
+  ]
+}

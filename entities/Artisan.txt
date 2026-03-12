@@ -1,0 +1,82 @@
+{
+  "name": "Artisan",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "string"
+    },
+    "profile_image": {
+      "type": "string"
+    },
+    "cover_image": {
+      "type": "string"
+    },
+    "village": {
+      "type": "string"
+    },
+    "district": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "Andhra Pradesh",
+        "Telangana"
+      ]
+    },
+    "craft_type": {
+      "type": "string"
+    },
+    "experience_years": {
+      "type": "number"
+    },
+    "rating": {
+      "type": "number",
+      "default": 4.5
+    },
+    "total_sales": {
+      "type": "number",
+      "default": 0
+    },
+    "products_count": {
+      "type": "number",
+      "default": 0
+    },
+    "awards": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "story": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "bank_verified": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected"
+      ],
+      "default": "pending"
+    }
+  },
+  "required": [
+    "name",
+    "craft_type"
+  ]
+}
