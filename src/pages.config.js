@@ -6,6 +6,7 @@ import Checkout from './components/pages/Checkout';
 import Contact from './components/pages/Contact';
 import EventDetail from './components/pages/EventDetail';
 import Home from './components/pages/Home';
+import Login from './components/pages/Login';
 import Mela from './components/pages/Mela';
 import MelaDetails from './components/pages/MelaDetails';
 import MysteryBox from './components/pages/MysteryBox';
@@ -26,6 +27,7 @@ export const PAGES = {
     "Contact": Contact,
     "EventDetail": EventDetail,
     "Home": Home,
+    "Login": Login,
     "Mela": Mela,
     "MelaDetails": MelaDetails,
     "MysteryBox": MysteryBox,

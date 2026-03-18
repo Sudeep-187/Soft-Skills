@@ -1,9 +1,15 @@
 import About from './components/pages/About';
+import ArtisanProfile from './components/pages/ArtisanProfile';
 import BecomeSeller from './components/pages/BecomeSeller';
 import Cart from './components/pages/Cart';
 import Checkout from './components/pages/Checkout';
 import Contact from './components/pages/Contact';
+import EventDetail from './components/pages/EventDetail';
 import Home from './components/pages/Home';
+import Login from './components/pages/Login';
+import Mela from './components/pages/Mela';
+import MelaDetails from './components/pages/MelaDetails';
+import MysteryBox from './components/pages/MysteryBox';
 import ProductDetail from './components/pages/ProductDetail';
 import Products from './components/pages/Products';
 import Profile from './components/pages/Profile';
@@ -11,13 +17,20 @@ import TrendingProducts from './components/pages/TrendingProducts';
 import Wishlist from './components/pages/Wishlist';
 import __Layout from './Layout.jsx';
 
+
 export const PAGES = {
     "About": About,
+    "ArtisanProfile": ArtisanProfile,
     "BecomeSeller": BecomeSeller,
     "Cart": Cart,
     "Checkout": Checkout,
     "Contact": Contact,
+    "EventDetail": EventDetail,
     "Home": Home,
+    "Login": Login,
+    "Mela": Mela,
+    "MelaDetails": MelaDetails,
+    "MysteryBox": MysteryBox,
     "ProductDetail": ProductDetail,
     "Products": Products,
     "Profile": Profile,
